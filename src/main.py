@@ -24,6 +24,14 @@ def generate_pin(length=4):
     return "".join(random.choice(string.digits) for _ in range(length))
  
  
+def read_length():
+    while True:
+        value = input("Length (4-32): ")
+        if value.isdigit() and 4 <= int(value) <= 32:
+            return int(value)
+        print("Error: enter a number from 4 to 32")
+ 
+ 
 if __name__ == "__main__":
-    show_password(generate_password())
+    show_password(generate_password(read_length()))
     print("PIN:", generate_pin())
