@@ -33,6 +33,10 @@ def read_length():
         print("Error: enter a number from 4 to 32")
  
  
+def generate_many(count, length=12):
+    return [generate_password(length) for _ in range(count)]
+ 
+ 
 if __name__ == "__main__":
     show_password(generate_password(read_length()))
     print("PIN:", generate_pin())
