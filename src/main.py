@@ -41,6 +41,25 @@ def filter_by_strength(passwords, level):
     return [p for p in passwords if check_strength(p) == level]
  
  
+def show_strong_passwords(count=10, length=12):
+    strong = filter_by_strength(generate_many(count, length), "strong")
+    print(f"Strong passwords: {len(strong)} of {count}")
+    for password in strong:
+        print(" ", password)
+
+
+def menu():
+    while True:
+        choice = input("1 - password, 2 - PIN, 3 - strong passwords, 0 - exit: ")
+        if choice == "1":
+            show_password(generate_password(read_length()))
+        elif choice == "2":
+            print("PIN:", generate_pin())
+        elif choice == "3":
+            show_strong_passwords()
+        elif choice == "0":
+            break
+ 
+ 
 if __name__ == "__main__":
-    show_password(generate_password(read_length()))
-    print("PIN:", generate_pin())
+    menu()
