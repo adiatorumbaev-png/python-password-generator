@@ -20,5 +20,10 @@ def show_password(password):
     print("Password:", password, "-", check_strength(password))
  
  
+def generate_pin(length=4):
+    return "".join(random.choice(string.digits) for _ in range(length))
+ 
+ 
 if __name__ == "__main__":
     show_password(generate_password())
+    print("PIN:", generate_pin())
