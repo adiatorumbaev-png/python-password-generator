@@ -37,6 +37,10 @@ def generate_many(count, length=12):
     return [generate_password(length) for _ in range(count)]
  
  
+def filter_by_strength(passwords, level):
+    return [p for p in passwords if check_strength(p) == level]
+ 
+ 
 if __name__ == "__main__":
     show_password(generate_password(read_length()))
     print("PIN:", generate_pin())
