@@ -1,4 +1,4 @@
-# Password generator v1.1
+# Secure Password Generator v1.2
 import random
 import string
  
